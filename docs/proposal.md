@@ -15,7 +15,7 @@ title: Proposal
 <br>
 ### Meet the Instructor<br />
 1/23/2025 Group meeting at discord.<br />
-Decides to meet the instructor at week 4.
+Decides to meet the instructor at 1/28/2025 at 12:10pm.
 <br>
 <br>
 ### AI Tool Usage<br />
