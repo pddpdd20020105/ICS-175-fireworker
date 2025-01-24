@@ -10,7 +10,9 @@ title:  Team 6
 ***UCI Net ID***: dongdop
 
 ## Yukai Gu
-***UCI Net ID***: yukaig1
+***UCI Net ID***: yukaig1  
+***Github***: https://github.com/stevenguyukai  
+***Personal Website***: https://stevenguyukai.github.io
 
 ## USER 3
 ***UCI Net ID***: ucinetid3
