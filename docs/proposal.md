@@ -7,7 +7,7 @@ title: Proposal
 
 
 ### Summary of Project
-People’s comments are usually hard to understand so it is very complex for company or other users to know what exactly the comments are saying. We are doing emotion/mood detectors from text. This can be used to decide whether a comment is positive or negative. It will be a great tool for market research or auto-deleting malicious comments from comment sections. The input for our system is a plain text, the output will be an adjective word to describe the text.
+People’s comments are usually hard to understand so it is very complex for company or other users to know what exactly the comments are saying. We are doing emotion/mood detectors from text. This can be used to decide whether a comment is positive or negative. It will be a great tool for market research or auto-deleting malicious comments from comment sections. The input for our system is a plain text, the output will be one of the following `POSITIVE`, `NEGATIVE`, `NEUTRAL`.
 <br>
 <br>
 
