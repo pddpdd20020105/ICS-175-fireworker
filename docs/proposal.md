@@ -13,12 +13,12 @@ title: Proposal
 ### Evaluation Plan
 <br>
 <br>
-### Meet the Instructor
+### Meet the Instructor<br />
 1/23/2025 Group meeting at discord.<br />
 Decides to meet the instructor at week 4.
 <br>
 <br>
-### AI Tool Usage
+### AI Tool Usage<br />
 Using Chatgpt for brainstorming the ideas.
 <br>
 <br>
