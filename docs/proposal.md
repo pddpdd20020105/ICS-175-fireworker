@@ -36,7 +36,8 @@ Decides to meet the instructor at 1/28/2025 at 12:10pm.
 <br>
 
 ### AI Tool Usage<br />
-Using Chatgpt for brainstorming the ideas.
+Using Chatgpt for brainstorming the ideas and tools to evaluate the system.<br />
+
 <br>
 <br>
 
