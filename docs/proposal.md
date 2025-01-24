@@ -13,7 +13,7 @@ People’s comments are usually hard to understand so it is very complex for com
 
 ### AI/ML Algorithms<br />
 1. Using Logistic Regression as a baseline model.<br />
-2. Probably using LSTM or BERT for further experiments as a deep learning model.
+2. We plan to use LSTM or BERT for further experiments as a deep learning model.
 <br>
 <br>
 
