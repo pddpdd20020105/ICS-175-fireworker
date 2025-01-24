@@ -7,7 +7,9 @@ title: Proposal
 ### Summary of Project
 <br>
 <br>
-### AI/ML Algorithms
+### AI/ML Algorithms<br />
+1. Using Logistic Regression as a baseline model.<br />
+2. Probably using LSTM or BERT for further experiments as a deep learning model.
 <br>
 <br>
 ### Evaluation Plan
