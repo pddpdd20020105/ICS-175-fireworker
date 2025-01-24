@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Source code: https://github.com/USER/PROJECT (_fix this_)
+Source code: https://github.com/pddpdd20020105/ICS-175-Group-6-Project/tree/main
 
 Reports:
 
