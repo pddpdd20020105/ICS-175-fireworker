@@ -9,7 +9,7 @@ title:  Team 6
 ## Dongdong Pan
 ***UCI Net ID***: dongdop
 
-## USER 2
+## Yukai Gu
 ***UCI Net ID***: yukaig1
 
 ## USER 3
