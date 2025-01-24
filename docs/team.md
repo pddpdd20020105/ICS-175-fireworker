@@ -6,7 +6,7 @@ title:  Team 6
 # {{ page.title }}
 
 
-## USER 1
+## Dongdong Pan
 ***UCI Net ID***: dongdop
 
 ## USER 2
