@@ -4,8 +4,6 @@ title: Proposal
 ---
 
 # {{ page.title }}: Additional Text
-
-
 ### Summary of Project
 <br>
 <br>
