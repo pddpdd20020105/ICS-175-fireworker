@@ -14,5 +14,5 @@ title:  Team 6
 ***Github***: https://github.com/stevenguyukai  
 ***Personal Website***: https://stevenguyukai.github.io
 
-## USER 3
-***UCI Net ID***: ucinetid3
+## Tia Wang
+***UCI Net ID***: tairanw2
