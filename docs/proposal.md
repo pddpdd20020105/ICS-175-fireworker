@@ -3,7 +3,7 @@ layout: default
 title: Proposal
 ---
 
-# {{ page.title }}: Additional Text
+# {{ page.title }}: Text Sentiment Analysis System
 
 
 ### Summary of Project
