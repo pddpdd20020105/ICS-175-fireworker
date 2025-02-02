@@ -3,42 +3,45 @@ layout: default
 title: Proposal
 ---
 
-# {{ page.title }}: Text Sentiment Analysis System
+# {{ page.title }}: Hanabi AI
 
 
-## Summary of Project
-People’s comments are usually hard to understand so it is very complex for company or other users to know what exactly the comments are saying. We are doing emotion/mood detectors from text. This can be used to decide whether a comment is positive or negative. It will be a great tool for market research or auto-deleting malicious comments from comment sections. The input for our system is a plain text, the output will be one of the following `POSITIVE`, `NEGATIVE`, `NEUTRAL`.
+## Summary of the Project
+This project aims to develop an intelligent agent using **reinforcement learning** to achieve a high or perfect score in the game of **HANABI**. In this game, players cannot see their own cards and must make decisions based on clues provided by their teammates, making it a **Partially observable Markov decision process (POMDP)**. The main challenge and objective of this project are to train agents to collaborate efficiently and make optimal decisions under limited information.
+
+The **input** of this project consists of the game state, which includes clues from other players, teammates’ cards, previous actions, the number of remaining clues, the discard pile, and other relevant information of the game. The **output** will be the action done by the agent on its turn which includes discarding a card, giving a clue to one teammate, or playing a card.
+
+This project focuses on **Multi-agent reinforcement learning (MARL)** and the cooperation between agents. The approach can be applied to other POMDP-based games, such as Werewolf (Mafia) or Avalon. Also this project can help further research in cooperative AI systems.
 <br>
 <br>
 
-## AI/ML Algorithms<br />
-1. Using Logistic Regression as a baseline model.<br />
-2. We plan to use LSTM or BERT for further experiments as a deep learning model to improve the performance.
+## AI/ML Algorithms
+We plan to use **reinforcement learning (RL)** in this project. Specifically, we will explore three different approaches: **Proximal Policy Optimization (PPO)**, **Advantage Actor-Critic (A2C)**, and **Deep Q-Networks (DQN)** to train our agents. Our approach is primarily **model-free**, and we will experiment with **both on-policy (PPO, A2C) and off-policy (DQN)** methods to compare their performance.
 <br>
 <br>
 
-## Evaluation Plan<br />
-Quantitative Evaluation<br />
+## Evaluation Plan
+**Quantitative Evaluation:**  
+We will use the **average game score** as the main metric to evaluate our project. The learning environment includes a simple episode runner using the RL environment, where the average score is near 0, indicating that without collaboration, even achieving 1 point is highly challenging. Therefore, we will use this as our baseline. Our goal is for our RL agents to achieve an average score of at least 15 over 25. Additionally, we will track the number of meaningful clues provided by the agent to assess its ability to cooperate effectively.
 
-To evaluate the success of our sentiment analysis system, we’ll focus on metrics like accuracy, precision, recall, and F1-score to see how well it classifies text into positive, negative, or neutral sentiments. Our baseline model will use Logistic Regression with TF-IDF or Bag-of-Words for feature extraction, and we expect it to achieve an F1-score of around 70-75% on standard datasets. For the advanced models, like LSTM or BERT, we’re aiming for an F1-score improvement to about 80-85%. We’ll test the models on popular datasets like the IMDB Sentiment Dataset or Twitter Sentiment Analysis Dataset, splitting the data 80-20 for training and testing and using cross-validation to make sure our results are consistent and reliable.
+**Qualitative Evaluation:**  
+For qualitative evaluation, we aim to analyze how the AI makes decisions. We will design toy examples with predefined optimal actions and test whether the AI selects the best possible action. The key objective is to determine whether the agents are truly learning to collaborate.
 
-Qualitative Evaluation<br />
-
-To make sure the system actually works, we’ll run it on some simple examples, like “I love this product” (positive) or “This was the worst experience ever” (negative), and see if it predicts the right sentiment. We’ll also test more tricky cases, like “The movie was good, but the ending was disappointing,” to see how it handles mixed sentiments. To visualize what the model is doing, we’ll use tools like attention maps (for BERT) or analyze the hidden states (for LSTM). Our big goal is to create a system that can handle really complicated texts, like medical or legal ones, without needing a lot of extra training. If we can get to that point, we’ll show it off with a live demo where users can input text and see both the predictions and explanations.<br />
-Moonshot case is the system has over 95% accuracy which is pretty hard even for a human reader.
+**Moonshot Case:**  
+Our ultimate goal is to develop AI agents that can achieve human-level collaboration in Hanabi. Ideally, perform the same or even better to human players.
 <br>
 <br>
 
-## Meet the Instructor<br />
-1/23/2025 Group meeting at discord.<br />
-Decides to meet the instructor at 1/28/2025 at 12:10pm.
+## Meet the Instructor
+Group meeting at discord. [01/23/2025] \
+Meet with the instructor. [01/28/2025 - 12:10pm] \
+Meet with the instructor. [02/03/2025 - 13:10pm] \
 <br>
 <br>
 
-## AI Tool Usage<br />
-Using Chatgpt for brainstorming the ideas. <br />
-Determining the most efficient algorithm for text detector. <br />
-
+## AI Tool Usage
+Using Chatgpt for brainstorming the ideas. \
+Proof read on the proposal. \
+Debugging errors.
 <br>
 <br>
-
