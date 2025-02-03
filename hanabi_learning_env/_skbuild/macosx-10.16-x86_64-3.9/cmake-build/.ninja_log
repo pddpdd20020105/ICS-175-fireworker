@@ -1,0 +1,14 @@
+# ninja log v5
+2	1185	1738457399574482127	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_card.cc.o	6b7c222b707c0274
+4	1262	1738457399648482714	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_move.cc.o	bd56c9233ac8f57e
+3	1297	1738457399688745064	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_history_item.cc.o	6e1449387df65a88
+5	1684	1738457400073298184	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/util.cc.o	9df548e270e4f8aa
+4	2572	1738457400961424045	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_observation.cc.o	1a3e2f31957127e1
+6	2642	1738457401031175902	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/canonical_encoders.cc.o	fa7b9b016dd04b66
+3	2736	1738457401125704455	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_hand.cc.o	17cc32dc2e053bbb
+8	3282	1738457401673323600	hanabi_learning_environment/CMakeFiles/pyhanabi.dir/pyhanabi.cc.o	4c9133ce9dec082a
+5	3361	1738457401749555320	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_state.cc.o	86263554874c13d3
+3	3413	1738457401805402697	hanabi_learning_environment/hanabi_lib/CMakeFiles/hanabi.dir/hanabi_game.cc.o	bf781bb5a79a38a5
+3413	3808	1738457402208553000	hanabi_learning_environment/hanabi_lib/libhanabi.a	4397f5f2ebd11f97
+3808	3911	1738457402309405180	hanabi_learning_environment/libpyhanabi.dylib	6c4d1c035375fae1
+3911	4120	0	CMakeFiles/install.util	454f202c021cbfe9
