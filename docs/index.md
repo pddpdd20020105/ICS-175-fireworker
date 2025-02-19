@@ -19,3 +19,4 @@ Github: [Source code](https://github.com/pddpdd20020105/ICS-175-Group-6-Project/
 1. [Hanabi Learning Environment](https://github.com/google-deepmind/hanabi-learning-environment?tab=readme-ov-file)
 2. [Stable baselines3](https://github.com/DLR-RM/stable-baselines3)
 3. [Hanabi rule](https://github.com/Hanabi-Live/hanabi-live/blob/main/docs/rules.md)
+4. [Learning and Reproduction](https://github.com/marlbenchmark/on-policy)
