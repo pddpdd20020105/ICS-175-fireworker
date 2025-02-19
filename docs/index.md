@@ -3,6 +3,12 @@ layout: default
 title:  Home
 ---
 
+![giphy](https://github.com/user-attachments/assets/bad0c133-c65e-459c-9d41-7b6ed0ef6652)
+
+Our project aims to train an AI agent to play Hanabi and achieve high scores using reinforcement learning. We will use PPO and A2C to optimize decision-making in a cooperative, partially observable environment.
+<br>
+<br>
+
 Github: [Source code](https://github.com/pddpdd20020105/ICS-175-Group-6-Project/tree/main)
 <br>
 <br>
