@@ -15,16 +15,16 @@ As a cooperative game with limited information, **MAPPO (Multi-Agent PPO)** is a
 ## Approach
 Pan: 
 My approach applies **PPO** within a customized **Hanabi** environment, following these steps:  
-1. **Environment Setup**  
+- **Environment Setup**  
    We use a Hanabi simulator that enforces **partial observability**, allowing agents to see only other players' cards, ensuring adherence to game rules.  
 
-2. **PPO Implementation**  
+- **PPO Implementation**  
    We adapt **MAPPO** from an existing codebase, aligning it with Hanabi’s cooperative dynamics to enhance coordination.  
 
-3. **Training Process**  
+- **Training Process**  
    The agent interacts with the environment, receives rewards, and updates its policy using the **PPO objective**, ensuring stable learning. Agents act in turns, communicating indirectly through card-play decisions.  
 
-4. **Baseline Comparisons**  
+- **Baseline Comparisons**  
    We evaluate PPO performance across different settings, adjusting **player count, observation constraints, and communication methods** to analyze its adaptability in Hanabi.  
 
 
@@ -37,7 +37,17 @@ Pan:
 ![test1](https://github.com/user-attachments/assets/55fb6aef-32fe-417e-a891-28d64cf6ec76)
 
 
-## Next Steps
+## Challenges  
+- **Environment Adaptation**: Modifying PPO to fit our custom Hanabi environment while aligning observation and action spaces.  
+- **Performance Optimization**: Fine-tuning hyperparameters and model structure to improve learning efficiency.  
+- **Team Collaboration**: Ensuring consistency between PPO and A2C while integrating different approaches.  
+
+## Next Steps  
+1. **Integrate PPO** into our Hanabi environment for smooth gameplay.  
+2. **Optimize Performance** by refining hyperparameters and model design.  
+3. **Compare Algorithms** by benchmarking PPO against A2C and heuristic agents.  
+4. **Collaborate & Refine** through team discussions and iterative improvements.  
+
 
 ## References
 - [Learning and Reproduction](https://github.com/marlbenchmark/on-policy)
