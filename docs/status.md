@@ -45,7 +45,7 @@ critic_lr = 1e-3 \
 hidden_size = 512 \
 entropy_coef = 0.015 
 
-## Current Progress
+## Evaluation
 Pan:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
 - **Initial Agent Performance**: We have conducted **different experiments** with the PPO agent in various Hanabi setups. Preliminary results show that the agent is able to learn basic strategies, though further tuning and modifications are necessary to enhance its performance in more complex game scenarios.
@@ -60,23 +60,33 @@ Yukai:
 
 The following are the mean game score gained by every 100 episodes:
 <img width="656" alt="image" src="https://github.com/user-attachments/assets/02e422cf-6de5-4099-bd15-4e69b03014c6" />
+
 The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
 
 
 
 
-## Challenges
+## Remaining Goals and Challenges
 Pan:
 - **Environment Adaptation**: Modifying PPO to fit our custom Hanabi environment while aligning observation and action spaces.  
 - **Performance Optimization**: Fine-tuning hyperparameters and model structure to improve learning efficiency.  
-- **Team Collaboration**: Ensuring consistency between PPO and A2C while integrating different approaches.  
+- **Team Collaboration**: Ensuring consistency between PPO and A2C while integrating different approaches.
+
+Yukai:
+1. The goal for this quarter is to implement a MAPPO model and customized environment that trains agents to play hanabi at perfect score.
+2. Also the comparison between different model is also our main goal. We ran baseline models to compare each other's tranining time and the average score they get.
+3. The main challenge for me is that the RL is really a new area for me, it is hard for me the start from nowhere and reach a solid goal in RL training.
 
 ## Next Steps
 Pan:
 1. **Integrate PPO** into our Hanabi environment for smooth gameplay.  
 2. **Optimize Performance** by refining hyperparameters and model design.  
 3. **Compare Algorithms** by benchmarking PPO against A2C and heuristic agents.  
-4. **Collaborate & Refine** through team discussions and iterative improvements.  
+4. **Collaborate & Refine** through team discussions and iterative improvements.
+
+Yukai:
+1. My current MAPPO runs with deep-mind hanabi learning env, the next step is to use our own env with customized reward system to better train our agents.
+2. Reaching a higher score. Currently mean game score are just 1.25, this is surely not enough.
 
 
 ## References
