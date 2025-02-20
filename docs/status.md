@@ -91,4 +91,5 @@ Yukai:
 
 ## References
 - [Learning and Reproduction](https://github.com/marlbenchmark/on-policy)
-- Use Chatgpt to improve our status report
+- Use Chatgpt to proveread status report
+- Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why.
