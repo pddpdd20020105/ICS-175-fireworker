@@ -1,4 +1,4 @@
-# ICS-175-Group-6-Project -- HANABI AI
+# ICS-175-fireworker -- HANABI AI
 
 Project Website: https://pddpdd20020105.github.io/ICS-175-Group-6-Project/index.html 
 
