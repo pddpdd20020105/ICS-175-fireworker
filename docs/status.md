@@ -56,6 +56,12 @@ Pan:
 ![test2](https://github.com/user-attachments/assets/2d06b883-de92-4c5f-bf27-77fcfe263894)
 
 
+Yukai:
+
+The following are the mean game score gained by every 100 episodes:
+<img width="656" alt="image" src="https://github.com/user-attachments/assets/02e422cf-6de5-4099-bd15-4e69b03014c6" />
+The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
+
 
 
 
