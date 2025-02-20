@@ -34,9 +34,9 @@ Pan:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
 - **Initial Agent Performance**: We have conducted **different experiments** with the PPO agent in various Hanabi setups. Preliminary results show that the agent is able to learn basic strategies, though further tuning and modifications are necessary to enhance its performance in more complex game scenarios.
 - **Result Displaying**:
--- 2 players:
+2 players:
    ![test1](https://github.com/user-attachments/assets/55fb6aef-32fe-417e-a891-28d64cf6ec76)
--- 3 players:
+3 players:
    ![test2](https://github.com/user-attachments/assets/2d06b883-de92-4c5f-bf27-77fcfe263894)
 
 
