@@ -37,12 +37,14 @@ Pan:
 ![test1](https://github.com/user-attachments/assets/55fb6aef-32fe-417e-a891-28d64cf6ec76)
 
 
-## Challenges  
+## Challenges
+Pan:
 - **Environment Adaptation**: Modifying PPO to fit our custom Hanabi environment while aligning observation and action spaces.  
 - **Performance Optimization**: Fine-tuning hyperparameters and model structure to improve learning efficiency.  
 - **Team Collaboration**: Ensuring consistency between PPO and A2C while integrating different approaches.  
 
-## Next Steps  
+## Next Steps
+Pan:
 1. **Integrate PPO** into our Hanabi environment for smooth gameplay.  
 2. **Optimize Performance** by refining hyperparameters and model design.  
 3. **Compare Algorithms** by benchmarking PPO against A2C and heuristic agents.  
