@@ -3,6 +3,10 @@ layout: default
 title: status
 ---
 
+
+## Video Summary
+<iframe width="841" height="473" src="https://www.youtube.com/embed/xvjMrUUnVVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Project Summary
 In this project, we aim to develop AI agents capable of playing **Hanabi** using reinforcement learning techniques. Given the game's **partially observable** and **cooperative** nature, we explore multiple approaches to train agents that can make optimal decisions and achieve high scores. For the environment, we tested both deep-mind learning environment and customized environment. And we have expored different methods to achieve the goal namely, RPPO, Multi-agent PPO, and A2C.
 
