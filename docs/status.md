@@ -32,18 +32,22 @@ My approach is similar as Pan's which is using a multi-agent PPO model described
 
 The sampling is done by every step, we collect the observation, action, reward, predict critic value, and log probability to a buffer. These data will be used to calculate advantage and returns.
 
-My actor and critic is following the equation below:
+My actor and critic is following the equation below: 
+
 <img width="761" alt="image" src="https://github.com/user-attachments/assets/efd4ae72-a94c-4093-a25d-ed90e860c69e" />
 <img width="822" alt="image" src="https://github.com/user-attachments/assets/4cf25fc5-f3d0-4b0d-949b-316f8073e339" />
 
 I am taking parameters similar to the research: \
-num_mini_batch =  1 \
+actorLearningRate = 7e-4 \
+criticLearningRate = 1e-3 \
 num_env_steps = 10000000000000 (i am training at 100_000, becasue my computer is very slow)\
-ppo_epoch = 15 \
-lr = 7e-4 \
-critic_lr = 1e-3 \
-hidden_size = 512 \
-entropy_coef = 0.015 
+numPlayers = 2 \
+clipParam = 0.1 \
+ppoEpoch = 15 \
+numMiniBatch = 1 \
+valueLossCoefficient = 0.5 \
+entropyCoefficient = 0.015 \
+maximumGradientNorm = 0.5
 
 
 Tia:
@@ -73,7 +77,8 @@ Pan:
 
 Yukai:
 
-The following are the mean game score gained by every 100 episodes:
+The following are the mean game score gained by every 100 episodes: 
+
 <img width="656" alt="image" src="https://github.com/user-attachments/assets/02e422cf-6de5-4099-bd15-4e69b03014c6" />
 
 The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
