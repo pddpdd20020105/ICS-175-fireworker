@@ -128,6 +128,7 @@ Tia:
 - **Custom Reward Shaping:** Explore alternative reward structures or additional intermediate signals to help the agent learn more efficiently.
 
 ## References
-- [Learning and Reproduction](https://github.com/marlbenchmark/on-policy)
+- [The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games](https://github.com/marlbenchmark/on-policy)
+- [HIGH-DIMENSIONAL CONTINUOUS CONTROL USING GENERALIZED ADVANTAGE ESTIMATION](https://arxiv.org/abs/1506.02438)
 - Use Chatgpt to proveread status report
 - Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why.
