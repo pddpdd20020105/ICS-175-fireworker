@@ -45,6 +45,21 @@ critic_lr = 1e-3 \
 hidden_size = 512 \
 entropy_coef = 0.015 
 
+
+Tia:
+
+- **Custom Hanabi Environment:** I adapted the Hanabi Learning Environment into a Gym-compatible format, ensuring partial observability and legal move constraints. The RL agent controls seat 0, while other seats are run by a RandomAgent.
+- **A2C Implementation:**
+   - **Stable Baselines3:** Uses A2C with a vectorized environment (DummyVecEnv) and normalization (VecNormalize).
+   - **Network Architecture:** A deeper MLP with layers of size [256, 256, 256, 256] to handle the complexity of Hanabi observations.
+   - **Hyperparameters:**
+      - Learning Rate: linear schedule from 3×10^(−4) down to 1×10^(−5)
+      - n_steps=256
+      - γ=0.995
+      - Entropy Coefficient α=0.05 for exploration
+      - GAE λ=0.95
+   - **Training Process:** The agent interacts with the environment, gathers transitions, and updates its policy and value function. Training metrics are tracked in TensorBoard for analysis.
+
 ## Evaluation
 Pan:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
@@ -64,7 +79,16 @@ The following are the mean game score gained by every 100 episodes:
 The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
 
 
+Tia:
 
+- **Initial Agent Performance:**
+   - The A2C agent shows signs of learning basic cooperative play, though final scores remain modest.
+   - TensorBoard logs reveal policy loss and value loss decreasing over time, indicating learning progress.
+   - Entropy remains sufficiently high, suggesting continued exploration but also contributing to variability in results.
+- **Result Displaying:**
+   - The figure below (from TensorBoard) highlights training metrics such as policy loss, value loss, and explained variance.
+     
+   - Unstable Fluctuations: As with many partially observable settings, the performance can fluctuate significantly. Further tuning is needed to stabilize learning and improve scores.
 
 ## Remaining Goals and Challenges
 Pan:
