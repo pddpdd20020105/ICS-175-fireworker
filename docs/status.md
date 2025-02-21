@@ -87,8 +87,9 @@ Tia:
    - Entropy remains sufficiently high, suggesting continued exploration but also contributing to variability in results.
 - **Result Displaying:**
    - The figure below (from TensorBoard) highlights training metrics such as policy loss, value loss, and explained variance.
-     
+     <img width="1021" alt="progress report" src="https://github.com/user-attachments/assets/a7147b68-05ff-408f-bc4d-5b220886e996" />
    - Unstable Fluctuations: As with many partially observable settings, the performance can fluctuate significantly. Further tuning is needed to stabilize learning and improve scores.
+
 
 ## Remaining Goals and Challenges
 Pan:
@@ -101,6 +102,10 @@ Yukai:
 2. Also the comparison between different model is also our main goal. We ran baseline models to compare each other's tranining time and the average score they get.
 3. The main challenge for me is that the RL is really a new area for me, it is hard for me the start from nowhere and reach a solid goal in RL training.
 
+Tia:
+- **Performance Optimization:** Tuning hyperparameters—especially the entropy coefficient, learning rate, and network architecture—will be crucial for improving final scores.
+- **Complexity of Hanabi:** The cooperative nature and limited information in Hanabi often require advanced coordination mechanisms, making training more challenging than standard RL tasks.
+
 ## Next Steps
 Pan:
 1. **Integrate PPO** into our Hanabi environment for smooth gameplay.  
@@ -112,6 +117,10 @@ Yukai:
 1. My current MAPPO runs with deep-mind hanabi learning env, the next step is to use our own env with customized reward system to better train our agents.
 2. Reaching a higher score. Currently mean game score are just 1.25, this is surely not enough.
 
+Tia:
+- **Extended Training:** Increase total timesteps and use multiple random seeds to ensure more stable and reproducible learning outcomes.
+- **Hyperparameter Tuning:** Systematically adjust parameters (e.g., learning rate, network size, entropy coefficient) to improve stability and convergence.
+- **Custom Reward Shaping:** Explore alternative reward structures or additional intermediate signals to help the agent learn more efficiently.
 
 ## References
 - [Learning and Reproduction](https://github.com/marlbenchmark/on-policy)
