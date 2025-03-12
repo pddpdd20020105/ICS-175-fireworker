@@ -36,6 +36,8 @@ Our ultimate goal is to develop AI agents that can achieve human-level collabora
 Group meeting at discord. [01/23/2025] \
 Meet with the instructor. [01/28/2025 - 12:10pm] \
 Meet with the instructor. [02/03/2025 - 13:10pm] \
+Meet with the instructor. [02/24/2025 - 13:10pm] (Instructor Feeling unwell)\
+Meet with the instructor. [02/25/2025 - 12:30pm] \
 <br>
 <br>
 
