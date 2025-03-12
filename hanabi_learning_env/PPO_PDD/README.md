@@ -21,9 +21,13 @@ make -j
 pip install -r requirements.txt
 ```
 
-###1.3 goto the /mappo/onpolicy/
-For evaluation
-run eval_hanabi.py
-For training
-run train_hanabi_forward.sh
+### 1.3 Navigate to `/mappo/onpolicy/`
 
+To evaluate the model, run:
+```bash
+python eval_hanabi.py
+```
+To train the model, run:
+```bash
+./train_hanabi_forward.sh
+```
