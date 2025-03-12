@@ -11,6 +11,8 @@ This video is limited to **uci.edu** account!
 
 ## Project Summary
 In this project, we aim to develop AI agents capable of playing **Hanabi** using reinforcement learning techniques. Given the game's **partially observable** and **cooperative** nature, we explore multiple approaches to train agents that can make optimal decisions and achieve high scores. For the environment, we tested both deep-mind learning environment and customized environment. And we have expored different methods to achieve the goal namely, RPPO, Multi-agent PPO, and A2C.\
+
+
 -MAPPO(Dongdong Pan) - folder name: PPO_PDD
 
 ## Approach
