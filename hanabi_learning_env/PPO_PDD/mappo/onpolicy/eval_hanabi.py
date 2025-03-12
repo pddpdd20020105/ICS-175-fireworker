@@ -6,12 +6,14 @@ import socket
 import setproctitle
 import numpy as np
 from pathlib import Path
-import torch
-from onpolicy.config import get_config
-from onpolicy.envs.hanabi.Hanabi_Env import HanabiEnv
-from onpolicy.envs.env_wrappers import ChooseSubprocVecEnv, ChooseDummyVecEnv
 
-"""Train script for Hanabi."""
+import torch
+
+from config import get_config
+
+from envs.hanabi.Hanabi_Env import HanabiEnv
+from envs.env_wrappers import ChooseSubprocVecEnv, ChooseDummyVecEnv
+
 
 def make_train_env(all_args):
     def get_env_fn(rank):
@@ -26,9 +28,7 @@ def make_train_env(all_args):
                 raise NotImplementedError
             env.seed(all_args.seed + rank * 1000)
             return env
-
         return init_env
-
     if all_args.n_rollout_threads == 1:
         return ChooseDummyVecEnv([get_env_fn(0)])
     else:
@@ -49,9 +49,7 @@ def make_eval_env(all_args):
                 raise NotImplementedError
             env.seed(all_args.seed * 50000 + rank * 10000)
             return env
-
         return init_env
-
     if all_args.n_eval_rollout_threads == 1:
         return ChooseDummyVecEnv([get_env_fn(0)])
     else:
@@ -60,7 +58,7 @@ def make_eval_env(all_args):
 
 def parse_args(args, parser):
     parser.add_argument('--hanabi_name', type=str,
-                        default='Hanabi-Very-Small', help="Which env to run on")
+                        default='Hanabi-Full', help="Which env to run on")
     parser.add_argument('--num_agents', type=int,
                         default=2, help="number of players")
 
@@ -82,10 +80,14 @@ def main(args):
         all_args.use_recurrent_policy = False 
         all_args.use_naive_recurrent_policy = False
     elif all_args.algorithm_name == "ippo":
-        print("u are choosing to use ippo, we set use_centralized_V to be False")
+        print("u are choosing to use ippo, we set use_centralized_V to be False.")
         all_args.use_centralized_V = False
     else:
         raise NotImplementedError
+
+    assert all_args.use_eval, ("u need to set use_eval be True")
+    print(os.getcwd())
+    all_args.model_dir = "../model"    
 
     # cuda
     if all_args.cuda and torch.cuda.is_available():
@@ -101,8 +103,7 @@ def main(args):
         torch.set_num_threads(all_args.n_training_threads)
 
     # run dir
-    run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
-                       0] + "/results") / all_args.env_name / all_args.hanabi_name / all_args.algorithm_name / all_args.experiment_name
+    run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0] + "/results") / all_args.env_name / all_args.hanabi_name / all_args.algorithm_name / all_args.experiment_name
     if not run_dir.exists():
         os.makedirs(str(run_dir))
 
@@ -113,8 +114,8 @@ def main(args):
                          entity=all_args.user_name,
                          notes=socket.gethostname(),
                          name=str(all_args.algorithm_name) + "_" +
-                              str(all_args.experiment_name) +
-                              "_seed" + str(all_args.seed),
+                         str(all_args.experiment_name) +
+                         "_seed" + str(all_args.seed),
                          group=all_args.hanabi_name,
                          dir=str(run_dir),
                          job_type="training",
@@ -123,8 +124,7 @@ def main(args):
         if not run_dir.exists():
             curr_run = 'run1'
         else:
-            exst_run_nums = [int(str(folder.name).split('run')[1]) for folder in run_dir.iterdir() if
-                             str(folder.name).startswith('run')]
+            exst_run_nums = [int(str(folder.name).split('run')[1]) for folder in run_dir.iterdir() if str(folder.name).startswith('run')]
             if len(exst_run_nums) == 0:
                 curr_run = 'run1'
             else:
@@ -144,7 +144,7 @@ def main(args):
     # env init
     envs = make_train_env(all_args)
     eval_envs = make_eval_env(all_args) if all_args.use_eval else None
-    num_agents = all_args.num_agents
+    num_agents = 2
 
     config = {
         "all_args": all_args,
@@ -155,15 +155,11 @@ def main(args):
         "run_dir": run_dir
     }
 
-    # run experiments
-    if all_args.share_policy:
-        from onpolicy.runner.shared.hanabi_runner_forward import HanabiRunner as Runner
-    else:
-        from onpolicy.runner.separated.hanabi_runner_forward import HanabiRunner as Runner
+    from runner.shared.hanabi_runner_forward import HanabiRunner as Runner
 
     runner = Runner(config)
-    runner.run()
-
+    runner.eval_100k()
+    
     # post process
     envs.close()
     if all_args.use_eval and eval_envs is not envs:
@@ -178,3 +174,4 @@ def main(args):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
