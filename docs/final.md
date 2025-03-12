@@ -15,22 +15,17 @@ In this project, we aim to develop AI agents capable of playing **Hanabi** using
 
 ## Approach
 Pan: 
+After implementing the initial approach, I attempted to further reproduce the methods described in the paper. My goal was to adapt the reproduced code to our custom environment, ensuring that it aligned with our specific settings and constraints. However, the actual results did not meet expectations. Despite careful modifications and integration efforts, the model’s performance remained suboptimal. The agent struggled to effectively coordinate actions and achieve high scores, suggesting that additional adjustments or alternative approaches might be necessary.
+![aacd4aafed3263c70837116c1d27f47](https://github.com/user-attachments/assets/f16fbc74-0163-4cf0-9e4e-74a24a5a360c)
+After attempting to integrate the reproduced code into our custom environment, I decided to shift to using the original environment from the paper due to compatibility issues, possibly caused by version differences.\
 
-I aim to train an AI agent using **Proximal Policy Optimization (PPO)** to achieve high scores and effective teamwork in Hanabi’s **partially observable** environment.  
-As a cooperative game with limited information, **MAPPO (Multi-Agent PPO)** is a crucial choice, enabling agents to share a **centralized value function** for better coordination. The paper *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games* highlights PPO and MAPPO’s success in similar settings, making it an ideal approach. Therefore, I am reproducing its code as the foundation for my project.   
+To ensure the code could run properly in the original environment, I made modifications to certain parts of the implementation. For example, comparing the two provided code snippets:
+<img width="532" alt="image" src="https://github.com/user-attachments/assets/70526fca-2474-4908-bad3-07aaed59bb97" />
+<img width="612" alt="image" src="https://github.com/user-attachments/assets/26766006-205c-475d-90b5-2ba843940e3b" />
+The second image shows the original code, where self.fc_h and get_clones(self.fc_h, self._layer_N) were used.
+However, in the first image, I modified it by replacing get_clones() with nn.ModuleList(), ensuring compatibility with the newer framework while preserving the intended structure.
+This adjustment was necessary as the original implementation did not function correctly in the current version of the environment. By making these changes, I was able to execute the code while maintaining its original architecture as closely as possible.
 
-My approach applies **PPO** within a customized **Hanabi** environment, following these steps:  
-- **Environment Setup**  
-   We use a Hanabi simulator that enforces **partial observability**, allowing agents to see only other players' cards, ensuring adherence to game rules.  
-
-- **PPO Implementation**  
-   We adapt **MAPPO** from an existing codebase, aligning it with Hanabi’s cooperative dynamics to enhance coordination.  
-
-- **Training Process**  
-   The agent interacts with the environment, receives rewards, and updates its policy using the **PPO objective**, ensuring stable learning. Agents act in turns, communicating indirectly through card-play decisions.  
-
-- **Baseline Comparisons**  
-   We evaluate PPO performance across different settings, adjusting **player count, observation constraints, and communication methods** to analyze its adaptability in Hanabi.
 
 Yukai:
 
