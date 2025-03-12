@@ -72,12 +72,12 @@ Tia:
 ## Evaluation
 Pan:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
-- **Initial Agent Performance**: We have conducted **different experiments** with the PPO agent in various Hanabi setups. Preliminary results show that the agent is able to learn basic strategies, though further tuning and modifications are necessary to enhance its performance in more complex game scenarios.
-- **Result Displaying:
-   - 2 players
-![test1](https://github.com/user-attachments/assets/55fb6aef-32fe-417e-a891-28d64cf6ec76)
-   - 3 players
-![test2](https://github.com/user-attachments/assets/2d06b883-de92-4c5f-bf27-77fcfe263894)
+- **With the deadline approaching (two week left), I started training the model. However, upon further examining the GitHub repository, I realized that training a fully optimized model would take an entire month. Given the time constraints, I decided to use the pre-trained model provided in the repository instead of training from scratch.
+- This is the part I train but I don't have enough time to train the whole thing.
+![result](https://github.com/user-attachments/assets/66df731d-5ca2-4e34-9a36-58ed47363c48)
+- This is the final score I used his traind model.
+<img width="431" alt="image" src="https://github.com/user-attachments/assets/affdc2c1-17ad-4b50-a255-9b34efa5bdc3" />
+
 
 
 Yukai:
