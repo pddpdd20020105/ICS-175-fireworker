@@ -101,39 +101,10 @@ Tia:
    - Unstable Fluctuations: As with many partially observable settings, the performance can fluctuate significantly. Further tuning is needed to stabilize learning and improve scores.
 
 
-## Remaining Goals and Challenges
-Pan:
-- **Environment Adaptation**: Modifying PPO to fit our custom Hanabi environment while aligning observation and action spaces.  
-- **Performance Optimization**: Fine-tuning hyperparameters and model structure to improve learning efficiency.  
-- **Team Collaboration**: Ensuring consistency between PPO and A2C while integrating different approaches.
-
-Yukai:
-1. The goal for this quarter is to implement a MAPPO model and customized environment that trains agents to play hanabi at perfect score.
-2. Also the comparison between different model is also our main goal. We ran baseline models to compare each other's tranining time and the average score they get.
-3. The main challenge for me is that the RL is really a new area for me, it is hard for me the start from nowhere and reach a solid goal in RL training.
-
-Tia:
-- **Performance Optimization:** Tuning hyperparameters—especially the entropy coefficient, learning rate, and network architecture—will be crucial for improving final scores.
-- **Complexity of Hanabi:** The cooperative nature and limited information in Hanabi often require advanced coordination mechanisms, making training more challenging than standard RL tasks.
-
-## Next Steps
-Pan:
-1. **Integrate PPO** into our Hanabi environment for smooth gameplay.  
-2. **Optimize Performance** by refining hyperparameters and model design.  
-3. **Compare Algorithms** by benchmarking PPO against A2C and heuristic agents.  
-4. **Collaborate & Refine** through team discussions and iterative improvements.
-
-Yukai:
-1. My current MAPPO runs with deep-mind hanabi learning env, the next step is to use our own env with customized reward system to better train our agents.
-2. Reaching a higher score. Currently mean game score are just 1.25, this is surely not enough.
-
-Tia:
-- **Extended Training:** Increase total timesteps and use multiple random seeds to ensure more stable and reproducible learning outcomes.
-- **Hyperparameter Tuning:** Systematically adjust parameters (e.g., learning rate, network size, entropy coefficient) to improve stability and convergence.
-- **Custom Reward Shaping:** Explore alternative reward structures or additional intermediate signals to help the agent learn more efficiently.
 
 ## References
 - [The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games](https://github.com/marlbenchmark/on-policy)
 - [HIGH-DIMENSIONAL CONTINUOUS CONTROL USING GENERALIZED ADVANTAGE ESTIMATION](https://arxiv.org/abs/1506.02438)
+## AI Tool Usage
 - Use Chatgpt to proveread status report
 - Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why.
