@@ -14,7 +14,7 @@ In this project, we aim to develop AI agents capable of playing **Hanabi** using
 
 
 ## Approach
-Pan: 
+Pan: \
 After implementing the initial approach, I attempted to further reproduce the methods described in the paper. My goal was to adapt the reproduced code to our custom environment, ensuring that it aligned with our specific settings and constraints. However, the actual results did not meet expectations. Despite careful modifications and integration efforts, the model’s performance remained suboptimal. The agent struggled to effectively coordinate actions and achieve high scores, suggesting that additional adjustments or alternative approaches might be necessary.
 ![aacd4aafed3263c70837116c1d27f47](https://github.com/user-attachments/assets/f16fbc74-0163-4cf0-9e4e-74a24a5a360c)
 After attempting to integrate the reproduced code into our custom environment, I decided to shift to using the original environment from the paper due to compatibility issues, possibly caused by version differences.\
