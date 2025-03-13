@@ -20,7 +20,14 @@ Given these challenges, we explore **reinforcement learning approaches** to trai
 
 ## Approach
 Pan: \
-After implementing the initial approach, I attempted to further reproduce the methods described in the paper. My goal was to adapt the reproduced code to our custom environment, ensuring that it aligned with our specific settings and constraints. However, the actual results did not meet expectations. Despite careful modifications and integration efforts, the model’s performance remained suboptimal. The agent struggled to effectively coordinate actions and achieve high scores, suggesting that additional adjustments or alternative approaches might be necessary.\
+After implementing the initial approach, I attempted to reproduce the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) framework described in the paper.. My goal was to adapt the reproduced code to our custom environment, ensuring that it aligned with our specific settings and constraints. However, the actual results did not meet expectations. Despite careful modifications and integration efforts, the model’s performance remained suboptimal. The agent struggled to effectively coordinate actions and achieve high scores, suggesting that additional adjustments or alternative approaches might be necessary.\
+
+Challenges with Baseline Approach
+
+- **Performance Issues**: The agent failed to reach the expected performance, possibly due to differences in the environment dynamics.  
+- **Compatibility Issues**: The original implementation encountered errors when integrated into our custom environment, likely due to version mismatches in dependencies.  
+- **Training Instability**: The learning curve showed slow convergence, and the final policy was not as effective as described in the paper.
+
 <img src="https://github.com/user-attachments/assets/f16fbc74-0163-4cf0-9e4e-74a24a5a360c" width="400">\
 After attempting to integrate the reproduced code into our custom environment, I decided to shift to using the original environment from the paper due to compatibility issues, possibly caused by version differences.
 
