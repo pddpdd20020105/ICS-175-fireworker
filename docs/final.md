@@ -10,7 +10,10 @@ This video is limited to **uci.edu** account!
 <iframe width="841" height="473" src="https://www.youtube.com/embed/xvjMrUUnVVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
-In this project, we aim to develop AI agents capable of playing **Hanabi** using reinforcement learning techniques. Given the game's **partially observable** and **cooperative** nature, we explore multiple approaches to train agents that can make optimal decisions and achieve high scores. For the environment, we tested both deep-mind learning environment and customized environment. And we have expored different methods to achieve the goal namely, RPPO, Multi-agent PPO, and A2C.
+In this project, we develop AI agents capable of playing **Hanabi** using reinforcement learning techniques. **Hanabi** is a cooperative, partially observable card game where players can see their teammates’ cards but not their own, requiring strategic reasoning and teamwork. The main challenge lies in **inferring hidden information, making optimal decisions with limited communication, and coordinating multi-agent actions**.
+
+Given these challenges, we explore **reinforcement learning approaches** to train agents that can make strategic decisions and achieve high scores. We tested both the **DeepMind Hanabi Learning Environment** and a **customized environment**, implementing methods such as **RPPO, Multi-agent PPO, and A2C**. These techniques allow AI agents to adapt dynamically, improving decision-making in cooperative settings.
+
 
 
 -MAPPO(Dongdong Pan) - folder name: PPO_PDD
