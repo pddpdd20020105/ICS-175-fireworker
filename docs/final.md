@@ -37,7 +37,7 @@ Parameters:\
 
 Equation:\
 <img width="458" alt="image" src="https://github.com/user-attachments/assets/1080cb25-8b33-4c7b-8c11-34310c9ae7c9" />\
-by the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) framework described in The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games\
+by the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) framework described in The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games
 
 
 Yukai:
