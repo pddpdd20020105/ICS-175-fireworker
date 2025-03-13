@@ -89,8 +89,9 @@ Tia:
 Pan:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
 - **With the deadline approaching (two week left), I started training the model. However, upon further examining the GitHub repository, I realized that training a fully optimized model would take an entire month. Given the time constraints, I decided to use the pre-trained model provided in the repository instead of training from scratch.
-- This is the part I train but I don't have enough time to train the whole thing.
+- This is the part I train but I don't have enough time to train the whole thing. This is the score I trained for a very long time.
 ![result](https://github.com/user-attachments/assets/66df731d-5ca2-4e34-9a36-58ed47363c48)
+
 - This is the final score I used his traind model.
 <img width="431" alt="image" src="https://github.com/user-attachments/assets/affdc2c1-17ad-4b50-a255-9b34efa5bdc3" />
 
