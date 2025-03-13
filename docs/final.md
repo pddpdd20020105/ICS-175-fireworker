@@ -93,6 +93,8 @@ Pan:
 ![result](https://github.com/user-attachments/assets/66df731d-5ca2-4e34-9a36-58ed47363c48)
 - This is the final score I used his traind model.
 <img width="431" alt="image" src="https://github.com/user-attachments/assets/affdc2c1-17ad-4b50-a255-9b34efa5bdc3" />
+
+
 - **Key Takeaway**: Using the pre-trained model significantly improved performance, but it does not fully reflect our ability to train the model from scratch.
 - **Next Steps**:
   - If more time were available, I would conduct full training instead of relying on the pre-trained model.
