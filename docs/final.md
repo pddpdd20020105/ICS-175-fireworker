@@ -172,6 +172,41 @@ normalizeWithPopart()
 - Settting beta = `0.001` (As recommended in Paper)
 - Settting epsilon = `1e-8` (As recommended in Paper)
 
+**== Step 6: ==**
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/bd92681a-4f3d-42ca-ac0c-666a10f93fc8" />
+
+```python
+yield {
+  "globalObservations": globalObservations,
+  "currentAgentObservation": currentAgentObservation,
+  "actorHidden": actorHidden,
+  "actorCell": actorCell,
+  "criticHidden": criticHidden,
+  "criticCell": criticCell,
+  "actions": actions,
+  "rewards": rewards,
+  "nextGlobalObservations": nextGlobalObservations,
+  "valuePredict": valuePredict,
+  "oldPolicyActionLogProbability": oldPolicyActionLogProbability,
+  "advantage": advantage,
+  "returns": returns
+}
+```
+
+- This part is implemented in the Buffer class as sampleMiniBatch()
+- Yield small chunks of training data
+
+**== Step 7: ==**
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/2fb1a8fb-73b1-477f-9841-2d2d97d10c8f" />
+
+```python
+
+```
+
+- T
+
 
 
 ### 4. Tia Tairan Wang's Approach:
