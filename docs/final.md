@@ -10,9 +10,14 @@ This video is limited to **uci.edu** account!
 <iframe width="841" height="473" src="https://www.youtube.com/embed/xvjMrUUnVVI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
-In this project, we develop AI agents capable of playing **Hanabi** using reinforcement learning techniques. **Hanabi** is a cooperative, partially observable card game where players can see their teammates’ cards but not their own, requiring strategic reasoning and teamwork. The main challenge lies in **inferring hidden information, making optimal decisions with limited communication, and coordinating multi-agent actions**.
+### Introduction:
+In this project, we are developing AI agents capable of playing **Hanabi** using reinforcement learning techniques. **Hanabi** is a cooperative, partially observable card game where players can see their teammates’ cards but not their own, requiring strategic reasoning and teamwork. The main challenge lies in **inferring hidden information, making optimal decisions with limited communication, and coordinating multi-agent actions**.
 
-Given these challenges, we explore **reinforcement learning approaches** to train agents that can make strategic decisions and achieve high scores. We tested both the **DeepMind Hanabi Learning Environment** and a **customized environment**, implementing methods such as **RPPO, Multi-agent PPO, and A2C**. These techniques allow AI agents to adapt dynamically, improving decision-making in cooperative settings.
+### Challenge:
+Hanabi differs from other adversarial two-player zero-sum games, the value of an agent’s policy depends critically on the policies used by its teammates. The unbalanced information, limited communication, multiple local optima, and interdependence of strategies making the problem not trivial and need to use multi-agent reinforcement learning to solve.
+
+### Method:
+Given these challenges, we explore **reinforcement learning approaches** to train agents that can make strategic decisions and aiming for high scores. We tested both on **DeepMind Hanabi Learning Environment** and a **Customized environment**, implementing methods such as **RPPO, Multi-agent PPO, and A2C**. These techniques allow AI agents to adapt dynamically, improving decision-making in cooperative settings.
 
 
 
