@@ -20,10 +20,10 @@ Hanabi differs from other adversarial two-player zero-sum games, the value of an
 Given these challenges, we explore **reinforcement learning approaches** to train agents that can make strategic decisions and aiming for high scores. We tested both on **DeepMind Hanabi Learning Environment** and a **Customized environment**, implementing methods such as **RPPO, Multi-agent PPO, and A2C**. These techniques allow AI agents to adapt dynamically, improving decision-making in cooperative settings.
 
 | Name     | Method  | Folder Name |
-| ------------ | ---------- | -------------- |
-| Dongdong Pan  | MAPPO | PPO_PDD |
-| Yukai Gu | RMAPPO | R-PPO_YukaiGu |
-| Tia Tairan Wang | A2C | A2C_TiaW |
+| :------------ | :----------: | --------------: |
+| Dongdong Pan  |   MAPPO   | PPO_PDD |
+| Yukai Gu |   RMAPPO   | R-PPO_YukaiGu |
+| Tia Tairan Wang |   A2C   | A2C_TiaW |
 
 
 ## Approaches
