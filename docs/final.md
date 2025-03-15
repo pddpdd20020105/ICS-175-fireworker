@@ -19,7 +19,6 @@ Hanabi differs from other adversarial two-player zero-sum games, the value of an
 ### 3. Method:
 Given these challenges, we explore **reinforcement learning approaches** to train agents that can make strategic decisions and aiming for high scores. We tested both on **DeepMind Hanabi Learning Environment** and a **Customized environment**, implementing methods such as **RPPO, Multi-agent PPO, and A2C**. These techniques allow AI agents to adapt dynamically, improving decision-making in cooperative settings.
 
-
 **Dongdong Pan:** 
 - Method: MAPPO
 - File Name: hanabi_learning_env/**PPO_PDD**
@@ -34,7 +33,12 @@ Given these challenges, we explore **reinforcement learning approaches** to trai
 
 
 ## Approaches
-Pan: \
+### 1. Baseline Approach -- Random choose:
+`move = np.random.choice(legal_moves)`
+
+Due to the essence of Hanabi, if the selection of the move is randomly picked, the score will most likely to be **Zero**. In fact, we ran 100_000 times of gameplay using this approach and the results are 0 for all games. 
+
+### 2. Dongdong Pan's Approach:
 After implementing the initial approach, I attempted to reproduce the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) framework described in the paper.. My goal was to adapt the reproduced code to our custom environment, ensuring that it aligned with our specific settings and constraints. However, the actual results did not meet expectations. Despite careful modifications and integration efforts, the model’s performance remained suboptimal. The agent struggled to effectively coordinate actions and achieve high scores, suggesting that additional adjustments or alternative approaches might be necessary.
 
 Challenges with Baseline Approach
@@ -62,8 +66,7 @@ Equation:\
 by the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) framework described in The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games
 
 
-Yukai:
-
+### 3. Yukai Gu's Approach:
 My approach is similar as Pan's which is using a multi-agent PPO model described in “The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games.”, where actor and critic have separated LSTM networks. Following Centralized Training with Decentralized Execution structure, we make the ACTOR network based on each agent’s local observation and the CRITIC network based on both local and global observation. The environment at the beginning is the deep-mind’s Hanabi learning environment, but we also create our own environment for a future customized reward system.  
 
 The sampling is done by every step, we collect the observation, action, reward, predict critic value, and log probability to a buffer. These data will be used to calculate advantage and returns.
@@ -86,7 +89,7 @@ entropyCoefficient = 0.015 \
 maximumGradientNorm = 0.5
 
 
-Tia:
+### 4. Tia Tairan Wang's Approach:
 
 - **Custom Hanabi Environment:** I adapted the Hanabi Learning Environment into a Gym-compatible format, ensuring partial observability and legal move constraints. The RL agent controls seat 0, while other seats are run by a RandomAgent.
 - **A2C Implementation:**
