@@ -34,7 +34,9 @@ Given these challenges, we explore **reinforcement learning approaches** to trai
 
 ## Approaches
 ### 1. Baseline Approach -- Random choose:
-`move = np.random.choice(legal_moves)`
+```python
+move = np.random.choice(legal_moves)
+```
 
 Due to the essence of Hanabi, if the selection of the move is randomly picked, the score will most likely to be **Zero**. In fact, we ran 100_000 times of gameplay using this approach and the results are 0 for all games. 
 
@@ -67,26 +69,40 @@ by the Recurrent Multi-Agent Proximal Policy Optimization (Recurrent-MAPPO) fram
 
 
 ### 3. Yukai Gu's Approach:
-My approach is similar as Pan's which is using a multi-agent PPO model described in “The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games.”, where actor and critic have separated LSTM networks. Following Centralized Training with Decentralized Execution structure, we make the ACTOR network based on each agent’s local observation and the CRITIC network based on both local and global observation. The environment at the beginning is the deep-mind’s Hanabi learning environment, but we also create our own environment for a future customized reward system.  
+My approach is similar as Pan's which is using a Recurrent multi-agent PPO model described in **“The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games.”**, where actor and critic have separated LSTM networks. Following Centralized Training with Decentralized Execution structure, we make the ACTOR network based on each agent’s local observation and the CRITIC network based on both local and global observation. 
 
-The sampling is done by every step, we collect the observation, action, reward, predict critic value, and log probability to a buffer. These data will be used to calculate advantage and returns.
+**Environment use:** 
+- Deep-mind’s Hanabi learning environment
+- Customized learning environment base on deep-mind's but changing the reward system
 
-My actor and critic is following the equation below: 
+**============ Full Implementation of RMAPPO ============**
 
-<img width="761" alt="image" src="https://github.com/user-attachments/assets/efd4ae72-a94c-4093-a25d-ed90e860c69e" />
-<img width="822" alt="image" src="https://github.com/user-attachments/assets/4cf25fc5-f3d0-4b0d-949b-316f8073e339" />
+**Step 1:**
 
-I am taking parameters similar to the research: \
-actorLearningRate = 7e-4 \
-criticLearningRate = 1e-3 \
-num_env_steps = 10000000000000 (i am training at 100_000, becasue my computer is very slow)\
-numPlayers = 2 \
-clipParam = 0.1 \
-ppoEpoch = 15 \
-numMiniBatch = 1 \
-valueLossCoefficient = 0.5 \
-entropyCoefficient = 0.015 \
-maximumGradientNorm = 0.5
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/9fe438cc-9685-4611-ba31-a36d1f8a6e39" />
+
+```python
+model.orthogonalInitialization()
+```
+
+- Let each layer in neural network orthogonal initialized
+- Make sure FORWARD is steady
+- Setting Actor Learning Rate = `7e-4`
+- Setting Critic Learning Rate = `1e-3`
+
+**Step 2:**
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/a2c602e3-695d-46ea-b256-dea1604c06b1" />
+
+```python
+buffer = Buffer(numPlayers)
+for episode in range(episodes):
+  buffer.clear()
+```
+
+
+- L
+
 
 
 ### 4. Tia Tairan Wang's Approach:
