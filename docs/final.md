@@ -87,12 +87,12 @@ model.orthogonalInitialization()
 
 - Let each layer in neural network orthogonal initialized
 - Make sure FORWARD is steady
-- Setting Actor Learning Rate = `7e-4`
-- Setting Critic Learning Rate = `1e-3`
+- Setting Actor Learning Rate = `7e-4` (As recommended in Paper)
+- Setting Critic Learning Rate = `1e-3` (As recommended in Paper)
 
 **Step 2:**
 
-<img width="709" alt="image" src="https://github.com/user-attachments/assets/a2c602e3-695d-46ea-b256-dea1604c06b1" />
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/e8928e5b-cc47-447c-90bc-13393fd26881" />
 
 ```python
 buffer = Buffer(numPlayers)
@@ -100,8 +100,47 @@ for episode in range(episodes):
   buffer.clear()
 ```
 
+- A Buffer class that stores the training datas and includes the tracing τ
+- The episodes are set to be 1_000_000, but in fact it runs very slow so never near to finish
+- For each episode, clear the buffer for next collection
+- Setting Batch Size = `1` (As recommended in Paper)
 
-- L
+**Step 3:**
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/50c053ea-b6eb-40a5-a1e9-780e9dd91eff" />
+
+```python
+hiddenStates = [[
+            ((torch.zeros(1, 1, 512, device = useDevice), torch.zeros(1, 1, 512, device = useDevice)),
+            (torch.zeros(1, 1, 512, device = useDevice), torch.zeros(1, 1, 512, device = useDevice))) for _ in range(numPlayers)
+            ] for i in range(envNum)]
+```
+
+- Initializing both Actor and Critic RNN states
+- Setting Hidden Layer Dimension = `512` (As recommended in Paper)
+
+**Step 4:**
+
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/9a5e575b-b27e-4826-898c-e282d27a2edc" />
+
+```python
+while not all done:
+  for i in range(envNum):
+    # Forward actor and critic
+    actionProbabilities, newActorHiddenLayer = model.forwardActor(currentAgentObservationVectorized, actorHiddenLayer, device = useDevice)
+    criticValue, newCriticHiddenLayer = model.forwardCritic(globalObservationVectorized, criticHiddenLayer, device = useDevice)
+    # update hidden states
+    hiddenStates[i][currentPlayerID] = (newActorHiddenLayer, newCriticHiddenLayer)
+
+    # Choose Action
+    candidateIndex = torch.multinomial(actionProbabilities[0, 0, :], num_samples = 1).item()
+    action = candidateIndex 
+```
+
+- Setting envNum = `1000` to collect enough training data for each episode (As recommended in Paper)
+- Forward actor: use current agent observation, hidden layer, and actor parameters to get action probabilities and new hidden layer
+- From action probabilities to sample an action
+- Forward critic: use global observation, hidden layer, and critic parameters to get critic value and new hidden layer
 
 
 
