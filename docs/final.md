@@ -150,11 +150,27 @@ while not all done:
 
 <img width="709" alt="image" src="https://github.com/user-attachments/assets/f7535f7d-74be-4883-bf89-9a6015e21fc9" />
 
-```python
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/acc3a4b8-d953-424d-8541-8f23f6851496" />
 
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/cb3b666d-08e6-4a30-a2e7-4aadf8e25d25" />
+
+```python
+for t in reversed(range(T)):
+  nextValue = valuePredict[t + 1]
+  delta = rewards[t] + gamma * nextValue - valuePredict[t]
+  lastGAE = delta + gamma * lamda * lastGAE
+  advantage[t] = lastGAE
+  returns[t] = advantage[t] + valuePredict[t]
+
+normalizeWithPopart()
 ```
 
-- 
+- DELTA Equation: δt = r_t + γ * V(s_(t+1) − V(s_t)
+- ADVANTAGE Equation: A_t = δt + γ * λ * A_(t+1)
+- Settting gamma = `0.99` (As recommended in Paper)
+- Settting lamda = `0.95` (As recommended in Paper)
+- Settting beta = `0.001` (As recommended in Paper)
+- Settting epsilon = `1e-8` (As recommended in Paper)
 
 
 
