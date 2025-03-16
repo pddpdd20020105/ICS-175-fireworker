@@ -265,7 +265,7 @@ for sample in dataBatch:
 
 ## Evaluation
 
-### Pan's Evaluation:
+### 1. Pan's Evaluation:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
 - **With the deadline approaching (two week left), I started training the model. However, upon further examining the GitHub repository, I realized that training a fully optimized model would take an entire month. Given the time constraints, I decided to use the pre-trained model provided in the repository instead of training from scratch.
 - Due to time constraints and multiple interruptions during the training process, I was unable to train the model to convergence. The following result is just an example from a long training session, but it does not represent the full final outcome. While attempting to reproduce the paper’s results, I encountered various issues that caused training to stop and restart frequently, leading to an inconsistent process. As a result, I had to rely on the pre-trained model instead of fully training from scratch.
@@ -281,7 +281,7 @@ for sample in dataBatch:
   - Experimenting with different hyperparameters and architectures might further optimize performance.
 
 
-### Yukai Gu's Evaluation:
+### 2. Yukai Gu's Evaluation:
 
 I uses three learning envs and different states of my algorithm construction.
 
@@ -341,7 +341,7 @@ I uses three learning envs and different states of my algorithm construction.
   My focus now is making learning speed faster. I have tested different hyperparameters like lowering the chunk-size of learning datas and decreasing the total environment used for collecting data. None of these really change anything, so I start to change the reward system trying to make it learn faster even within small amount of steps. The yellow graph shows one of the reward system I changed. In this setting, I put a negative reward if each in game action doesn't end game. The initial intention is to not making the game long so the learning speed can increase. But it backfires as the average in-game steps are decreasing and overall not learning. Then I reverse the reward system that put positive reward if game not finish. The result is the purple line. The agent tooks more actions in each step and the reward is increase, however becasue it takes too many steps each game, I only finish 130 steps of learning after 12 hours of waiting. But overall, using the regined RMAPPO algorithm I reproduced from the paper, the game socre is improving over time. If there is a better computer that runs fast, I believe it will converge into a very high in-game score. 
 
 
-### Tia's Evaluation:
+### 3. Tia's Evaluation:
 
 - **Initial Agent Performance:**
    - The A2C agent shows signs of learning basic cooperative play, though final scores remain modest.
