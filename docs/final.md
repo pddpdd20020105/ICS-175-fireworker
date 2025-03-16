@@ -264,7 +264,8 @@ for sample in dataBatch:
    - **Training Process:** The agent interacts with the environment, gathers transitions, and updates its policy and value function. Training metrics are tracked in TensorBoard for analysis.
 
 ## Evaluation
-Pan:
+
+### Pan's Evaluation:
 - **Paper Reproduction**: We have **read and understood the code** from *The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games*, which has provided a solid foundation for our implementation and understanding of the PPO algorithm in cooperative multi-agent settings.
 - **With the deadline approaching (two week left), I started training the model. However, upon further examining the GitHub repository, I realized that training a fully optimized model would take an entire month. Given the time constraints, I decided to use the pre-trained model provided in the repository instead of training from scratch.
 - Due to time constraints and multiple interruptions during the training process, I was unable to train the model to convergence. The following result is just an example from a long training session, but it does not represent the full final outcome. While attempting to reproduce the paper’s results, I encountered various issues that caused training to stop and restart frequently, leading to an inconsistent process. As a result, I had to rely on the pre-trained model instead of fully training from scratch.
@@ -280,7 +281,7 @@ Pan:
   - Experimenting with different hyperparameters and architectures might further optimize performance.
 
 
-Yukai:
+### Yukai Gu's Evaluation:
 
 The following are the mean game score gained by every 100 episodes: 
 
@@ -289,7 +290,7 @@ The following are the mean game score gained by every 100 episodes:
 The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
 
 
-Tia:
+### Tia's Evaluation:
 
 - **Initial Agent Performance:**
    - The A2C agent shows signs of learning basic cooperative play, though final scores remain modest.
