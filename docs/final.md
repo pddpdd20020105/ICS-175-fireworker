@@ -314,11 +314,31 @@ I uses three learning envs and different states of my algorithm construction.
 
 - **Simple RPPO + Simple Customized Learning Environment (Version 1)**
 
+  <img width="832" alt="image" src="https://github.com/user-attachments/assets/1dbc51dd-cf99-4f54-8ac0-f7a93ad577ff" />
+
+  At this stage, I implemented a very simple RPPO method. This RPPO method has a shared LSTM that handle actor and critic input. The result indicates that the average game score is around 1.3. For a under 1 hour run I think it is doing great, but I think the model is converged in to a local minimum. I didn't run for a long time becasue it is still under-construction. Not for long, we found a seemingly more efficient and powerful algorihtm -- RMAPPO -- from the paper "The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games".
+
+
 - **RMAPPO + Deep-mind Learning Environment**
+
+  <img width="1124" alt="image" src="https://github.com/user-attachments/assets/7b882488-7353-4189-a5c4-dea5c3af9d1e" />
+
+  I start to reproduce the algorithm from the paper and change the learning environment back to deep-mind learning env for a steady run. One thing I immediately found out is using RMAPPO method takes much more time to train. Average episodes trained for 1 minute is 185. Besides the slow training, the results are very unstable and very hard to tell if it is improving other time.
 
 - **Refined RMAPPO + Deep-mind Learning Environment**
 
+  <img width="1124" alt="image" src="https://github.com/user-attachments/assets/5b9713cf-630c-4c15-b09a-40724550e85f" />
+
+  Later I found out that there is a inconsistency between my code and the paper, so I took some days to fix the problem. After running the algorithm, it becomes even worse. The training speed is unbelievable slow. Depending on the average step for one episode, the training speed vary from 60 episode per hour to 11 episode per hour. However, the graph is showing that the model is learning and improving over time. 
+
+
 - **Refined RMAPPO + Customized Learning Environment (Version 2)**
+
+  <img width="1124" alt="image" src="https://github.com/user-attachments/assets/0ec553c2-6924-459b-8b73-4bed5f0d8cbe" />
+
+  <img width="1124" alt="image" src="https://github.com/user-attachments/assets/61ed6039-29da-4565-be46-93add36172b1" />
+
+  My focus now is making learning speed faster. I have tested different hyperparameters like lowering the chunk-size of learning datas and decreasing the total environment used for collecting data. None of these really change anything, so I start to change the reward system trying to make it learn faster even within small amount of steps. The yellow graph shows one of the reward system I changed. In this setting, I put a negative reward if each in game action doesn't end game. The initial intention is to not making the game long so the learning speed can increase. But it backfires as the average in-game steps are decreasing and overall not learning. Then I reverse the reward system that put positive reward if game not finish. The result is the purple line. The agent tooks more actions in each step and the reward is increase, however becasue it takes too many steps each game, I only finish 130 steps of learning after 12 hours of waiting. But overall, using the regined RMAPPO algorithm I reproduced from the paper, the game socre is improving over time. If there is a better computer that runs fast, I believe it will converge into a very high in-game score. 
 
 
 ### Tia's Evaluation:
