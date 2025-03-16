@@ -304,11 +304,13 @@ I uses three learning envs and different states of my algorithm construction.
 
   <img width="309" alt="image" src="https://github.com/user-attachments/assets/c0bbff24-191e-40bf-a0f5-f79943c5ca86" />
 
-  At the begining of implementing our main PPO algorithm, I start with a random agent that is provided by the deep-mind's environemnt. As guessed, after 100,000 of game, the random selection agent get cumulative total of **Zero** game score. This really marks that the problem isn't that easy, even to get more then 0 point is a challenge for AI agent. At this point I am worried about the efficiency of training agent, becasue training evolves lots of tests and tries. Agent will learn most efficiently if the sampling data contains episodes that obtain some game scores. But based on the perform of random agent, I think it will take more times than expected to let training converged even to a local minima.
+  At the begining of implementing our main PPO algorithm, I start with a random agent that is provided by the deep-mind's environemnt. As guessed, after 100,000 of game, the random selection agent get cumulative total of **Zero** game score. This really marks that the problem isn't that easy, even to get more then 0 point is a challenge for AI agent. At this point I am worried about the efficiency of training agent, becasue training involves lots of tests and tries. Agent will learn most efficiently if the sampling data contains episodes that gain some game scores. But based on the perform of random agent, I think it will take more times and sampling data than expected to let training converged even to a local minimum.
 
 - **stable_baselines3's PPO + Simple Customized Learning Environment (Version 1)**
 
   <img width="836" alt="image" src="https://github.com/user-attachments/assets/a4a7b03e-1b7b-4cd5-b73c-7d9e6c308ba0" />
+
+  Next, I want to learn more about the learning environment and how training goes each episode, so I created a simple customized learning environment base on the deep-mind's env. Key changes are adding more logs to understand what is going on and adding customized rewarding system. The original reward system is basically the game score. At this stage I didn't have my own algorithm of training agent, so I uses stable_baselines3's PPO model and my environment. The result seems great as the reward is improving over time, but the average reward = 3 which is very low for my customized environment.
 
 - **Simple RPPO + Simple Customized Learning Environment (Version 1)**
 
