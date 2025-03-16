@@ -357,6 +357,11 @@ I uses three learning envs and different states of my algorithm construction.
 ## References
 - [The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games](https://github.com/marlbenchmark/on-policy)
 - [HIGH-DIMENSIONAL CONTINUOUS CONTROL USING GENERALIZED ADVANTAGE ESTIMATION](https://arxiv.org/abs/1506.02438)
+- [The Hanabi Challenge: A New Frontier for AI Research](https://arxiv.org/abs/1902.00506)
+- [Learning values across many orders of magnitude](https://arxiv.org/abs/1602.07714)
+
+
 ## AI Tool Usage
-- Use Chatgpt to proveread status report
+- Use Chatgpt to proveread report
 - Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why.
+- Copilot for library explain and understand how to use them
