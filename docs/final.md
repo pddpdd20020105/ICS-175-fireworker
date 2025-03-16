@@ -283,11 +283,40 @@ for sample in dataBatch:
 
 ### Yukai Gu's Evaluation:
 
-The following are the mean game score gained by every 100 episodes: 
+I uses three learning envs and different states of my algorithm construction.
 
-<img width="656" alt="image" src="https://github.com/user-attachments/assets/02e422cf-6de5-4099-bd15-4e69b03014c6" />
+**Learning Environments:**
 
-The graph shows that it is very unstable. I can predict that in a partially observable game the training will have up and down, but this is too unstable. I do think that there is problems with my hyperparameter values tunning and equation implementation. Although the training steps are very little, I still believe that this MAPPO method could do better than 1.25 game score.
+1. Deep-mind Learning Environment
+2. Simple Customized Learning Environment based on deep-mind's (Version 1)
+3. Customized learning Environment based on deep-mind's (Version 2)
+
+**Algorithms:**
+
+1. PPO method from stable_baselines3
+2. A simple RPPO method
+3. RMAPPO method from the paper
+4. Refined RMAPPO method from the paper
+
+**Combination Results:**
+
+- **Random Select Agent + Deep-mind Learning Environment**  
+
+  <img width="309" alt="image" src="https://github.com/user-attachments/assets/c0bbff24-191e-40bf-a0f5-f79943c5ca86" />
+
+  At the begining of implementing our main PPO algorithm, I start with a random agent that is provided by the deep-mind's environemnt. As guessed, after 100,000 of game, the random selection agent get cumulative total of **Zero** game score. This really marks that the problem isn't that easy, even to get more then 0 point is a challenge for AI agent. At this point I am worried about the efficiency of training agent, becasue training evolves lots of tests and tries. Agent will learn most efficiently if the sampling data contains episodes that obtain some game scores. But based on the perform of random agent, I think it will take more times than expected to let training converged even to a local minima.
+
+- **stable_baselines3's PPO + Simple Customized Learning Environment (Version 1)**
+
+  <img width="836" alt="image" src="https://github.com/user-attachments/assets/a4a7b03e-1b7b-4cd5-b73c-7d9e6c308ba0" />
+
+- **Simple RPPO + Simple Customized Learning Environment (Version 1)**
+
+- **RMAPPO + Deep-mind Learning Environment**
+
+- **Refined RMAPPO + Deep-mind Learning Environment**
+
+- **Refined RMAPPO + Customized Learning Environment (Version 2)**
 
 
 ### Tia's Evaluation:
