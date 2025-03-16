@@ -73,7 +73,7 @@ def run_game(game_parameters):
     print("--- EndEncodedObservations ---")
 
   game = pyhanabi.HanabiGame(game_parameters)
-  # print(game.parameter_string(), end="")
+  print(game.parameter_string(), end="")
   obs_encoder = pyhanabi.ObservationEncoder(
       game, enc_type=pyhanabi.ObservationEncoderType.CANONICAL)
 
@@ -83,36 +83,31 @@ def run_game(game_parameters):
       state.deal_random_card()
       continue
 
-    # print_state(state)
+    print_state(state)
 
     observation = state.observation(state.cur_player())
-    # print_observation(observation)
-    # print_encoded_observations(obs_encoder, state, game.num_players())
+    print_observation(observation)
+    print_encoded_observations(obs_encoder, state, game.num_players())
 
     legal_moves = state.legal_moves()
-    # print("")
-    # print("Number of legal moves: {}".format(len(legal_moves)))
+    print("")
+    print("Number of legal moves: {}".format(len(legal_moves)))
 
     move = np.random.choice(legal_moves)
-    # print("Chose random legal move: {}".format(move))
+    print("Chose random legal move: {}".format(move))
 
     state.apply_move(move)
 
-  # print("")
-  # print("Game done. Terminal state:")
-  # print("")
-  # print(state)
-  # print("")
-  # print("score: {}".format(state.score()))
-  return state.score()
+  print("")
+  print("Game done. Terminal state:")
+  print("")
+  print(state)
+  print("")
+  print("score: {}".format(state.score()))
 
 
 if __name__ == "__main__":
   # Check that the cdef and library were loaded from the standard paths.
   assert pyhanabi.cdef_loaded(), "cdef failed to load"
   assert pyhanabi.lib_loaded(), "lib failed to load"
-  scores = []
-  for i in range(100000):
-    scores.append(run_game({"players": 3, "random_start_player": True}))
-
-  print("Cumulative score of 100000 game: ", np.sum(scores))
+  run_game({"players": 3, "random_start_player": True})
