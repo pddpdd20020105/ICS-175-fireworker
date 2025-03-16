@@ -236,6 +236,17 @@ for sample in dataBatch:
 - OriginalValueLoss = (V_phi(s) - R)^2
 - ClippedValueLoss = (clip(V_phi(s), V_PHI_old(s) - ε, V_PHI_old(s) + ε) - R )^2
 
+**==========================================================**
+
+**Advantage:**
+
+1. RMAPPO uses Centralized Training for Decentralized Execution, this is a better method for solving multi-agent problems.
+2. RMAPPO differs from normal PPO that RMAPPO can use less sampling data and outperform other method. 
+
+**Disadvantage:**
+
+1. As a recurrent method, the running speed is very slow. Depend on the training progress and computation power, training each episode from my M2 Max chip can took from 30 seconds to 1 hour! And the recommendate training episodes are 10 trillion (Which will run forever).
+2. Sensitive to hyperparameter settings. As the paper indicates, when hyperparameters are setting perfectly it will outperform off-policy methods, but if the hyperparameters are not setting well it can degenerate the performance. 
 
 
 ### 4. Tia Tairan Wang's Approach:
