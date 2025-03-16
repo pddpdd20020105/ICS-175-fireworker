@@ -363,5 +363,6 @@ I uses three learning envs and different states of my algorithm construction.
 
 ## AI Tool Usage
 - Use Chatgpt to proveread report
-- Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why.
+- Using LLM to understand the equation from paper, provide implementation ideas, debug code, find related resources, evaluation the performance and suggest a possible why
 - Copilot for library explain and understand how to use them
+- Simple data format converting code
