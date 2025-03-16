@@ -201,11 +201,40 @@ yield {
 
 <img width="709" alt="image" src="https://github.com/user-attachments/assets/2fb1a8fb-73b1-477f-9841-2d2d97d10c8f" />
 
-```python
+<img width="710" alt="image" src="https://github.com/user-attachments/assets/227258b3-636f-4db1-a1d7-54b47cb1a2bb" />
 
+<img width="710" alt="image" src="https://github.com/user-attachments/assets/08a06103-67d4-4fef-ae2d-71a01e11d34f" />
+
+```python
+dataBatch = buffer.sampleMiniBatch(self.numMiniBatch, chunkSize)
+for sample in dataBatch:
+  for _ in range(self.ppoEpoch):
+    values, actionLogProbability, entropy, newActorHidden, newCriticHidden = self.policy.evaluateActions(currentAgentObservation, globalObservations, actions, actorHiddenStates, criticHiddenStates)
+
+    # Calculate Actor policy loss
+    importantWeight = torch.exp(actionLogProbability - oldPolicyActionLogProbability)
+    surrogate1 = importantWeight * advantage
+    surrogate2 = torch.clamp(importantWeight, 1.0 - self.clipParam, 1.0 + self.clipParam) * advantage
+    actorLoss = -torch.mean(torch.min(surrogate1, surrogate2)) - self.entropyCoefficient * entropy
+
+    # Calculate Critic loss
+    predictValueClipped = oldValue + (currentValues - oldValue).clamp(-self.clipParam, self.clipParam)
+    clippedError = predictValueClipped - returns
+    originalError = currentValues - returns
+    clippedValueLoss = torch.mean(clippedError ** 2)
+    originalValueLoss = torch.mean(originalError ** 2)
+    valueLoss = torch.max(originalValueLoss, clippedValueLoss)
+
+    # Total loss
+    totalLoss = actorLoss + self.valueLossCoefficient * criticValueLoss
+    adamUpdate(totalLoss)
 ```
 
-- T
+- ACTOR LOSS FUNCTION: L(theta) = min(importantWeight * A, clip(importantWeight, 1 - ε, 1 + ε) * A) + entropy * σ
+- ImportantWeight = exp(actionLogProbability - oldActionLogProbabilities)
+- CRITIC LOSS FUNCTION: L(phi) = (1 / Bn) * max(originalValueLoss, clippedValueLoss)
+- OriginalValueLoss = (V_phi(s) - R)^2
+- ClippedValueLoss = (clip(V_phi(s), V_PHI_old(s) - ε, V_PHI_old(s) + ε) - R )^2
 
 
 
