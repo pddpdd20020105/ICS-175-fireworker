@@ -16,7 +16,7 @@ This project focuses on **Multi-agent reinforcement learning (MARL)** and the co
 <br>
 
 ## AI/ML Algorithms
-We plan to use **reinforcement learning (RL)** in this project. Specifically, we will explore three different approaches: **Proximal Policy Optimization (PPO)**, **Advantage Actor-Critic (A2C)**, and **Deep Q-Networks (DQN)** to train our agents. Our approach is primarily **model-free**, and we will experiment with **both on-policy (PPO, A2C) and off-policy (DQN)** methods to compare their performance.
+We plan to use **reinforcement learning (RL)** in this project. Specifically, we will explore two different approaches: **Proximal Policy Optimization (PPO)** and **Advantage Actor-Critic (A2C)** to train our agents. Our approach is primarily **model-free**, and we will experiment with **on-policy methods (PPO, A2C)** to evaluate their performance.
 <br>
 <br>
 
@@ -36,6 +36,8 @@ Our ultimate goal is to develop AI agents that can achieve human-level collabora
 Group meeting at discord. [01/23/2025] \
 Meet with the instructor. [01/28/2025 - 12:10pm] \
 Meet with the instructor. [02/03/2025 - 13:10pm] \
+Meet with the instructor. [02/24/2025 - 13:10pm] (Instructor Feeling unwell)\
+Meet with the instructor. [02/25/2025 - 12:30pm] \
 <br>
 <br>
 
