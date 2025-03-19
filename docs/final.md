@@ -560,6 +560,7 @@ Based on these results, I identify several promising directions for future work:
 - [HIGH-DIMENSIONAL CONTINUOUS CONTROL USING GENERALIZED ADVANTAGE ESTIMATION](https://arxiv.org/abs/1506.02438)
 - [The Hanabi Challenge: A New Frontier for AI Research](https://arxiv.org/abs/1902.00506)
 - [Learning values across many orders of magnitude](https://arxiv.org/abs/1602.07714)
+- [Actor-Critic Algorithm in Reinforcement Learning](https://www.geeksforgeeks.org/actor-critic-algorithm-in-reinforcement-learning/)
 
 
 ## AI Tool Usage
