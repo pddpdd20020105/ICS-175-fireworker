@@ -535,7 +535,7 @@ A key metric for cooperative play is how effectively hints lead to successful pl
 
 #### Comparison to Other Approaches
 
-While my A2C implementation doesn't match the theoretical upper bounds of the RMAPPO approaches described by my colleagues, it offers several practical advantages:
+While my A2C implementation doesn't match the theoretical upper bounds of the RMAPPO approaches described by my teammates, it offers several practical advantages:
 
 1. **Training Speed**: Much faster convergence (hours vs. days/weeks)
 2. **Stability**: Consistent learning without numerical issues
